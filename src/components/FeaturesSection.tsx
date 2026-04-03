@@ -10,7 +10,7 @@ const features = [
   {
     icon: BarChart3,
     title: "Analytics Dashboard",
-    description: "Real-time revenue metrics, conversion rates, and customer insights — all in one beautiful dashboard.",
+    description: "Real-time revenue metrics, conversion rates, and customer insights. All in one beautiful dashboard.",
   },
   {
     icon: ArrowLeftRight,

@@ -1,11 +1,13 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, Zap, Globe } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const HeroSection = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 gradient-hero overflow-hidden">
-      {/* Subtle grid pattern */}
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{
@@ -14,16 +16,6 @@ const HeroSection = () => {
       />
 
       <div className="container mx-auto px-6 text-center relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/5 border border-primary/10 text-sm text-primary mb-8"
-        >
-          <Zap size={14} className="text-primary" />
-          Now processing $2B+ annually
-        </motion.div>
-
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -53,11 +45,20 @@ const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <Button size="lg" className="gradient-primary text-primary-foreground border-0 shadow-glow px-8 h-12 text-base">
+          <Button
+            size="lg"
+            className="gradient-primary text-primary-foreground border-0 shadow-glow px-8 h-12 text-base"
+            onClick={() => navigate("/get-started")}
+          >
             Start Accepting Payments
             <ArrowRight size={18} className="ml-2" />
           </Button>
-          <Button variant="outline" size="lg" className="h-12 px-8 text-base border-border text-foreground">
+          <Button
+            variant="outline"
+            size="lg"
+            className="h-12 px-8 text-base border-border text-foreground"
+            onClick={() => navigate("/docs")}
+          >
             View Documentation
           </Button>
         </motion.div>
